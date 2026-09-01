@@ -1,0 +1,43 @@
+<div class="welcome-section">
+  <% if logged_in? %>
+    <h1>Welcome back, <%= current_user.first_name %>!</h1>
+    <p>Your profile is up to date. You can view and edit your information below.</p>
+    
+    <div class="user-info">
+      <h2>Your Profile Information</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-label">Name</div>
+          <div class="info-value"><%= current_user.first_name %> <%= current_user.last_name %></div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-label">Email</div>
+          <div class="info-value"><%= current_user.email %></div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-label">Phone</div>
+          <div class="info-value"><%= current_user.phone.present? ? current_user.phone : "Not provided" %></div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-label">Address</div>
+          <div class="info-value"><%= current_user.address.present? ? current_user.address : "Not provided" %></div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-1">
+        <%= link_to "Edit Profile", edit_profile_path, class: "btn" %>
+      </div>
+    </div>
+  <% else %>
+    <h1>Welcome to User Portal</h1>
+    <p>A simple and secure way to manage your profile</p>
+    
+    <div style="margin-top: 2rem;">
+      <%= link_to "Sign Up", signup_path, class: "btn", style: "margin-right: 1rem;" %>
+      <%= link_to "Login", login_path, class: "btn" %>
+    </div>
+  <% end %>
+</div>

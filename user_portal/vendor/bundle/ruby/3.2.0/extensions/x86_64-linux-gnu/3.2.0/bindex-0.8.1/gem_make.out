@@ -1,0 +1,18 @@
+current directory: /workspace/user_portal/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+/usr/bin/ruby3.2 -I/usr/lib/ruby/vendor_ruby extconf.rb
+creating Makefile
+
+current directory: /workspace/user_portal/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260901-7540-tniq06 sitelibdir\=./.gem.20260901-7540-tniq06 clean
+
+current directory: /workspace/user_portal/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260901-7540-tniq06 sitelibdir\=./.gem.20260901-7540-tniq06
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /workspace/user_portal/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260901-7540-tniq06 sitelibdir\=./.gem.20260901-7540-tniq06 install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20260901-7540-tniq06/skiptrace/internal
+
+current directory: /workspace/user_portal/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260901-7540-tniq06 sitelibdir\=./.gem.20260901-7540-tniq06 clean

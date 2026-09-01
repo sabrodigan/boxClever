@@ -1,0 +1,57 @@
+<div class="card" style="max-width: 500px; margin: 0 auto;">
+  <h1>Create Your Account</h1>
+  
+  <%= form_with model: @user, url: signup_path do |f| %>
+    <% if @user.errors.any? %>
+      <div class="flash alert">
+        <h3><%= pluralize(@user.errors.count, "error") %> prevented this account from being created:</h3>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <div class="form-group">
+      <%= f.label :first_name, "First Name *" %>
+      <%= f.text_field :first_name, required: true, placeholder: "John" %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :last_name, "Last Name *" %>
+      <%= f.text_field :last_name, required: true, placeholder: "Doe" %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :email, "Email *" %>
+      <%= f.email_field :email, required: true, placeholder: "john@example.com" %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :phone, "Phone" %>
+      <%= f.telephone_field :phone, placeholder: "+1 (555) 123-4567" %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :address, "Address" %>
+      <%= f.text_area :address, placeholder: "123 Main St, City, State, ZIP" %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :password, "Password * (minimum 6 characters)" %>
+      <%= f.password_field :password, required: true %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :password_confirmation, "Confirm Password *" %>
+      <%= f.password_field :password_confirmation, required: true %>
+    </div>
+    
+    <%= f.submit "Create Account", class: "btn" %>
+  <% end %>
+  
+  <div class="text-center mt-1">
+    Already have an account? <%= link_to "Login here", login_path %>
+  </div>
+</div>
