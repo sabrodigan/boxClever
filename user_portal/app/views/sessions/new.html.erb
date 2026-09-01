@@ -1,0 +1,21 @@
+<div class="card" style="max-width: 500px; margin: 0 auto;">
+  <h1>Login to Your Account</h1>
+  
+  <%= form_with url: login_path do |f| %>
+    <div class="form-group">
+      <%= label_tag :email, "Email" %>
+      <%= email_field_tag :email, params[:email], required: true, placeholder: "john@example.com" %>
+    </div>
+    
+    <div class="form-group">
+      <%= label_tag :password, "Password" %>
+      <%= password_field_tag :password, nil, required: true %>
+    </div>
+    
+    <%= submit_tag "Login", class: "btn" %>
+  <% end %>
+  
+  <div class="text-center mt-1">
+    Don't have an account? <%= link_to "Sign up here", signup_path %>
+  </div>
+</div>
